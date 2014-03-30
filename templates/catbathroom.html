@@ -1,5 +1,15 @@
 {% extends "base.html" %}
 
 {% block body %}
-This is the cat bathroom!!!
+    {% if values['action'] == 'reset' %}
+    Cat Bathroom Score has been reset!<br />
+    {% endif %}
+
+    {% if values['score'] < 20 %}
+    <div class="catscore">{{ values['score'] }}</div>
+    {%  else %}
+    <div class="catscore dire">{{ values['score'] }}</div>
+    {% endif %}
+
+<a href="/catbathroom/reset">RESET</a>
 {% endblock %}

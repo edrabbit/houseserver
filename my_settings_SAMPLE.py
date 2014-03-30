@@ -1,0 +1,7 @@
+INDIGO_BASE_URI = "http://url_to_your_indigo_server:port/"
+INDIGO_URI_VAR = INDIGO_BASE_URI + "variables/"
+INDIGO_URI_DEVICE = INDIGO_BASE_URI + "devices/"
+INDIGO_URI_ACTION = INDIGO_BASE_URI + "actions/"
+
+INDIGO_USER = 'USERNAME'
+INDIGO_PASS = 'PASSWORD'
