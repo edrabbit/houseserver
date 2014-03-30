@@ -1,3 +1,6 @@
+import datetime
+import iso8601
+
 import flask
 import requests
 
@@ -29,9 +32,19 @@ def fetch_cat_bathroom_score():
     cb_score = _get_variable_value('cat_bathroom_score')
     return cb_score
 
+def fetch_last_cat_cleaning(dt=True):
+    # returns datetime object with datetime of last cleaning
+    last_cleaning = _get_variable_value('cat_last_cleaning')
+    if dt:
+        last_cleaning_dt = iso8601.parse_date(last_cleaning)
+        return last_cleaning_dt
+    else:
+        return last_cleaning
 
 def reset_cat_bathroom_score():
-    return _set_variable_value('cat_bathroom_score', '0')
+    now = datetime.datetime.now()
+    _set_variable_value('cat_last_cleaning', now.isoformat())
+    _set_variable_value('cat_bathroom_score', '0')
 
 
 @app.route("/")
@@ -41,6 +54,13 @@ def root():
 
 def display_cat_bathroom(values={}):
     values['score'] = fetch_cat_bathroom_score()
+
+    last_cleaning = fetch_last_cat_cleaning(dt=True)
+    values['last_date'] = last_cleaning.isoformat().replace("T", " ")
+
+    today = datetime.datetime.now()
+    values['days_since'] = (today.date() - last_cleaning.date()).days
+
     return flask.render_template(
         'catbathroom.html', values=values, title="Cat Bathroom")
 
@@ -53,7 +73,7 @@ def cat_bathroom(action=None):
         return display_cat_bathroom()
     else:
         if action == "reset":
-            successful = reset_cat_bathroom_score()
+            reset_cat_bathroom_score()
             return flask.redirect(flask.url_for('cat_bathroom'))
         else:
             return "Unsupported action: %s" % action
