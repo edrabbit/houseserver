@@ -17,9 +17,6 @@ h2              { font-size: 1.2em; }
     border: 1px solid #aacbe2; }
 .error          { background: #f0d6d6; padding: 0.5em; }
 
-.catscore       { font-size: 2em; font-weight: bold; text-align: center;  color: blue; }
-.dire           { color:red }
-
 .button {
     border-top: 1px solid #96d1f8;
     background: #65a9d7;
@@ -52,6 +49,41 @@ h2              { font-size: 1.2em; }
     background: #1b435e;
 }
 
+/* Cat Bathroom Page */
+.score {
+    width: 45%;
+    height: 100px;
+    text-align: center;
+    float: left;
+}
+.catscore       { font-size: 3em; font-weight: bold; color: blue; }
+
+
+.lastcleaning {
+    width: 45%;
+    height: 100px;
+    text-align: center;
+    float: right;
+}
+
+.cat_dayssince {
+    font-size: 3em;
+    font-weight: bold;
+    color: blue;
+}
+
+.cat_lastdate {
+    font-size: small;
+    color: blue;
+}
+
 .resetbutton {
+    margin-top: 25%;
+    margin-bottom: inherit;
+    margin-right: auto;
+    margin-left: auto;
+    width: 104px;
 
 }
+
+.dire           { color:red }

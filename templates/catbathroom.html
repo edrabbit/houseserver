@@ -1,11 +1,23 @@
 {% extends "base.html" %}
 
 {% block body %}
-    {% if values['score'] < 20 %}
-    <div class="catscore">{{ values['score'] }}</div>
-    {%  else %}
-    <div class="catscore dire">{{ values['score'] }}</div>
-    {% endif %}
 
-<a href="/catbathroom/reset" class="button resetbutton">RESET</a>
+    <div class="score">Score:
+        {% if values['score'] < 20 %}
+            <div class="catscore">{{ values['score'] }}</div>
+        {%  else %}
+            <div class="catscore dire">{{ values['score'] }}</div>
+        {% endif %}
+    </div>
+
+    <div class="lastcleaning">Days Since:
+        {% if values['days_since'] < 10 %}
+            <div class="cat_dayssince">{{ values['days_since'] }}</div>
+        {%  else %}
+            <div class="dire cat_dayssince">{{ values['days_since'] }}</div>
+        {% endif %}
+        <div class="cat_lastdate">{{ values['last_date'] }}</div>
+    </div>
+
+<div class="resetbutton"><a href="/catbathroom/reset" class="button">RESET</a></div>
 {% endblock %}
