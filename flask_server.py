@@ -54,7 +54,7 @@ def cat_bathroom(action=None):
     else:
         if action == "reset":
             successful = reset_cat_bathroom_score()
-            return display_cat_bathroom({'action': 'reset'})
+            return flask.redirect(flask.url_for('cat_bathroom'))
         else:
             return "Unsupported action: %s" % action
 
