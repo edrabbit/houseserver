@@ -56,7 +56,8 @@ def display_cat_bathroom(values={}):
     values['score'] = fetch_cat_bathroom_score()
 
     last_cleaning = fetch_last_cat_cleaning(dt=True)
-    values['last_date'] = last_cleaning.isoformat().replace("T", " ")
+    values['last_date'] = (
+        last_cleaning.isoformat().replace("T", " ").split('.')[0])
 
     today = datetime.datetime.now()
     values['days_since'] = (today.date() - last_cleaning.date()).days

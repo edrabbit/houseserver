@@ -2,7 +2,7 @@
 
 {% block body %}
 
-    <div class="score">Score:
+    <div class="score">Score
         {% if values['score'] < 20 %}
             <div class="catscore">{{ values['score'] }}</div>
         {%  else %}
@@ -10,7 +10,7 @@
         {% endif %}
     </div>
 
-    <div class="lastcleaning">Days Since:
+    <div class="lastcleaning">Days Since Cleaned
         {% if values['days_since'] < 10 %}
             <div class="cat_dayssince">{{ values['days_since'] }}</div>
         {%  else %}
