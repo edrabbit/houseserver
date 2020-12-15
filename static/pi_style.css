@@ -63,10 +63,24 @@ h2              { font-size: 1.2em; }
     text-align: center;
     float: left;
 }
+.pointscore {
+    font-size: 7em;
+    font-weight: bold;
+    color: black;
+}
+
 .catscore {
     font-size: 4em;
     font-weight: bold;
     color: blue;
+}
+
+.lastreset {
+    width: 50%;
+    /*height: 80px;*/
+    height: 60%;
+    text-align: center;
+    float: right;
 }
 
 .lastcleaning {
@@ -77,9 +91,20 @@ h2              { font-size: 1.2em; }
     float: right;
 }
 
+.dayssince {
+    font-size: 3em;
+    font-weight: bold;
+    color: blue;
+}
+
 .cat_dayssince {
     font-size: 4em;
     font-weight: bold;
+    color: blue;
+}
+
+.lastdate {
+    font-size: small;
     color: blue;
 }
 
@@ -98,3 +123,10 @@ h2              { font-size: 1.2em; }
 }
 
 .dire           { color:red }
+.red    {color:red}
+.orange {color:orange}
+.yellow {color:yellow}
+.green {color:green}
+.blue {color:blue}
+.indigo {color:indigo}
+.violet {color:violet}

@@ -3,20 +3,16 @@
 {% block body %}
 
     <div class="score">First Time Asks
-        {% if values['score'] < 20 %}
-            <div class="catscore">{{ values['score'] }}</div>
-        {%  else %}
-            <div class="catscore dire">{{ values['score'] }}</div>
-        {% endif %}
+        <div class="pointscore {{ values['color'] }}">{{ values['score'] }}</div>
     </div>
 
-    <div class="lastcleaning">Days Since Reset
+    <div class="lastreset">Days Since Reset
         {% if values['days_since'] < 10 %}
-            <div class="cat_dayssince">{{ values['days_since'] }}</div>
+            <div class="dayssince">{{ values['days_since'] }}</div>
         {%  else %}
-            <div class="dire cat_dayssince">{{ values['days_since'] }}</div>
+            <div class="dire dayssince">{{ values['days_since'] }}</div>
         {% endif %}
-        <div class="cat_lastdate">{{ values['last_date'] }}</div>
+        <div class="lastdate">{{ values['last_date'] }}</div>
     </div>
 
 <div class="resetbutton"><a href="/fta/reset" class="button">RESET</a></div>

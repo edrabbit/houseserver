@@ -114,6 +114,20 @@ def display_fta(values={}):
     today = datetime.datetime.now()
     values['days_since'] = (today.date() - last_reset.date()).days
 
+    colors = [
+        "black",
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "indigo",
+        "violet"
+    ]
+
+    r = int(values['score'] / 10)
+    values['color'] = colors[r]
+    print "color should be %s" % values['color']
     return flask.render_template(
         'fta.html', values=values, title="First Time Ask")
 
