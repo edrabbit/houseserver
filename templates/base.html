@@ -1,14 +1,14 @@
 <!doctype html>
 <head>
-    <meta http-equiv="refresh" content="300" />
+    <meta http-equiv="refresh" content="20" />
 </head>
 <title>{% if title %}{{ title }}{% else %}Chez Hunsinger{% endif %}</title>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='pi_style.css') }}">
 <div class=page>
     <h1 class="title">{% if title %}{{ title }}{% else %}Chez Hunsinger{% endif %}</h1>
-    <div class=metanav>
-        <div><a href="/catbathroom">Cat Bathroom</a></div>
-    </div>
+<!--    <div class=metanav> -->
+<!--        <div><a href="/catbathroom">Cat Bathroom</a></div> -->
+<!--    </div> -->
     {% for message in get_flashed_messages() %}
     <div class=flash>{{ message }}</div>
     {% endfor %}
